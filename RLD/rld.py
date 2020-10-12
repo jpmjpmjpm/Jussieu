@@ -39,10 +39,11 @@ class Rld:
         return self.gains[item_index]
 
     """
-    Return a regret list with one regret by item based on a valuation function.
+    Return a regret list with one regret per item based on a valuation function.
     The valuation function is defined as
     def valuation_item(context, gains):
-        return valuation_item
+        ...
+        return regret_list
     It takes as arguments the context and gains of a given item
     Interesting: we pass a function as an argument of a function!
     """
