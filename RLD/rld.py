@@ -31,12 +31,12 @@ class Rld:
                 f"Sample of gains:\n{self.gains}")
 
     # Return the i-th item context
-    def item_context(self, i):
-        return self.context[i]
+    def item_context(self, item_index):
+        return self.context[item_index]
 
     # Return the i-th item gains
-    def item_gains(self, i):
-        return self.gains[i]
+    def item_gains(self, item_index):
+        return self.gains[item_index]
 
     """
     Return a regret list with one regret by item based on a valuation function.
