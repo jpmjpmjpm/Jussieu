@@ -5,8 +5,6 @@ RLD Class for:
 
 """
 
-import random as rd
-
 import numpy as np
 
 
@@ -62,15 +60,15 @@ def main():
 
     # Random strategy evaluation. Valuation for an item is equal to max of gains minus a random gain.
     def strategy_random(context, gains):
-        return np.amax(gains) - gains[rd.randint(0, gains.shape[0] - 1)]
+        return np.amax(gains) - np.random.choice(gains)
 
     random_regret_list = data.regret_list(strategy_random)
     print(f"Random regret list: {random_regret_list}\n")
 
     # Optimal strategy.
     def strategy_optimal(context, gains):
-        chosen = gains[np.argmax(gains)]
-        best = gains[np.argmax(gains)]
+        chosen = np.amax(gains)
+        best = np.amax(gains)
         return best - chosen
 
     optimal_regret_list = data.regret_list(strategy_optimal)
